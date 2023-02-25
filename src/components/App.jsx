@@ -11,7 +11,6 @@ class App extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
-    statisticActive: false,
   };
   addStatisticsFeedback = value => {
     const actualValue = value;
@@ -36,15 +35,14 @@ class App extends Component {
     });
   };
   render() {
-    const { good, neutral, bad, total, positivePercentage, statisticActive } =
-      this.state;
+    const { good, neutral, bad, total, positivePercentage } = this.state;
     return (
       <div className={style.body}>
         <div className={style.component}>
           <h2>Please leave feedback</h2>
           <FeedbackOptions addStatisticsFeedback={this.addStatisticsFeedback} />
           <Section title="Statistics">
-            {statisticActive ? (
+            {this.state.total > 0 ? (
               <Statistics
                 good={good}
                 neutral={neutral}
