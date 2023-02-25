@@ -42,7 +42,7 @@ class App extends Component {
           <h2>Please leave feedback</h2>
           <FeedbackOptions addStatisticsFeedback={this.addStatisticsFeedback} />
           <Section title="Statistics">
-            {this.state.total > 0 ? (
+            {total > 0 ? (
               <Statistics
                 good={good}
                 neutral={neutral}
